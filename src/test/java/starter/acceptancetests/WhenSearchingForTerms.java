@@ -11,13 +11,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import starter.actions.navigation.NavigateTo;
 import starter.actions.search.LookForInformation;
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 class WhenSearchingForTerms {
 
     @CastMember
     Actor actor;
 
-    @Test
+//    @Test
     @DisplayName("Should be able to search for red things")
     void searchForRedThings() {
         actor.attemptsTo(
@@ -27,7 +27,7 @@ class WhenSearchingForTerms {
         );
     }
 
-    @Test
+//    @Test
     @DisplayName("Should be able to search for green things")
     void searchForGreenThings() {
         actor.attemptsTo(

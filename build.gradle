@@ -31,8 +31,20 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}",
             "org.projectlombok:lombok:${lombokVersion}",
-            "ch.qos.logback:logback-classic:${logbackVersion}"
+            "ch.qos.logback:logback-classic:${logbackVersion}",
+            "com.browserstack:browserstack-java-sdk:1.27.0"
 }
+
+tasks.withType(Test).configureEach { task ->
+    doFirst {
+        configurations.testRuntimeClasspath
+                ?.find { it.name.startsWith("browserstack-java-sdk") }
+                ?.with { task.jvmArgs += "-javaagent:$it" }
+        task.jvmArgs += "-Xmx2G"
+    }
+}
+
+
 
 test {
     useJUnitPlatform()

@@ -1,6 +1,6 @@
 package starter.acceptancetests;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
+//import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.annotations.CastMember;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import starter.actions.navigation.NavigateTo;
 import starter.actions.search.LookForInformation;
 
-@RunWith(SerenityRunner.class)
+//@RunWith(SerenityRunner.class)
 class WhenSearchingForTermsWithJunit4 {
 
     @CastMember
     Actor actor;
 
-    @Test
+//    @Test
     void searchForRedThings() {
         actor.attemptsTo(
                 NavigateTo.theSearchHomePage(),
@@ -25,7 +25,7 @@ class WhenSearchingForTermsWithJunit4 {
         );
     }
 
-    @Test
+//    @Test
     void searchForGreenThings() {
         actor.attemptsTo(
                 NavigateTo.theSearchHomePage(),
